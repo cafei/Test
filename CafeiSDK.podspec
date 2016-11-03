@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/cafei/Test.git", :tag => "#{s.version}" }
   s.platform     = :ios, "7.0"
   s.requires_arc = true
-
+  s.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","SystemConfiguration","CoreLocation"
 
   s.default_subspec = 'Cafei'
 
@@ -20,10 +20,9 @@ Pod::Spec.new do |s|
     c.preserve_paths = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
     c.vendored_libraries = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
     c.xcconfig = {
-        'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK',
-        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK'
+        'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK',
+        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK'
     }
-    c.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","SystemConfiguration","CoreLocation"
     c.libraries = "z","sqlite3.0"
   end
 
