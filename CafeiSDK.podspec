@@ -20,8 +20,8 @@ Pod::Spec.new do |s|
     c.preserve_paths = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
     c.vendored_libraries = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
     c.xcconfig = {
-        'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK"',
-        'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK"'
+        'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK',
+        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK'
     }
     c.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","SystemConfiguration","CoreLocation"
     c.libraries = "z","sqlite3.0"
