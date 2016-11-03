@@ -27,12 +27,12 @@ Pod::Spec.new do |s|
   end
 
   # WeChat
-  s.subspec 'WeChat' do |sp|
-  sp.vendored_libraries = "MagicWindowSDK/WeChat/*.a"
-  sp.source_files = "MagicWindowSDK/WeChat/*.{h,m}"
-  sp.public_header_files = "MagicWindowSDK/WeChat/*.h"
-  sp.libraries = "sqlite3","c++"
-  sp.dependency 'CafeiSDKBitcode/Cafei'
-  end
+  #s.subspec 'WeChat' do |sp|
+  #sp.vendored_libraries = "MagicWindowSDK/WeChat/*.a"
+  #sp.source_files = "MagicWindowSDK/WeChat/*.{h,m}"
+  #sp.public_header_files = "MagicWindowSDK/WeChat/*.h"
+ # sp.libraries = "sqlite3","c++"
+  #sp.dependency 'CafeiSDKBitcode/Cafei'
+  #end
 
 end
