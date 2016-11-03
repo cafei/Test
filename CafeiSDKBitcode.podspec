@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.requires_arc = true
 
-  s.default_subspec = 'Cafei'
+#s.default_subspec = 'Cafei'
 
   s.subspec 'Cafei' do |c|
     c.source_files = "MagicWindowSDK/MagicWindowSDKBitcode/*.{h,m}"

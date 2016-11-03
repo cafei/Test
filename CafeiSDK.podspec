@@ -17,24 +17,24 @@ s.xcconfig = {
 s.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","SystemConfiguration","CoreLocation"
 
 
-s.default_subspec = 'MW'
+#s.default_subspec = 'MW'
 
-s.subspec 'MW' do |mw|
- mw.vendored_libraries = "MagicWindowSDK/MagicWindowSDK/*.a"
- mw.source_files = "MagicWindowSDK/MagicWindowSDK/*.{h,m}"
- mw.public_header_files = "MagicWindowSDK/MagicWindowSDK/*.h"
- mw.resource     = "MagicWindowSDK/MagicWindowSDK/*.bundle"
- mw.libraries = "z","sqlite3.0"
-end
+#s.subspec 'MW' do |mw|
+ s.vendored_libraries = "MagicWindowSDK/MagicWindowSDK/*.a"
+ s.source_files = "MagicWindowSDK/MagicWindowSDK/*.{h,m}"
+ s.public_header_files = "MagicWindowSDK/MagicWindowSDK/*.h"
+ s.resource     = "MagicWindowSDK/MagicWindowSDK/*.bundle"
+ s.libraries = "z","sqlite3.0"
+#end
 
 
 # WeChat
-s.subspec 'WeChat' do |sp|
-sp.vendored_libraries = "MagicWindowSDK/WeChat/*.a"
-sp.source_files = "MagicWindowSDK/WeChat/*.{h,m}"
-sp.public_header_files = "MagicWindowSDK/WeChat/*.h"
-sp.libraries = "sqlite3","c++"
-sp.dependency 'CafeiSDK/MW'
-end
+#s.subspec 'WeChat' do |sp|
+#sp.vendored_libraries = "MagicWindowSDK/WeChat/*.a"
+#sp.source_files = "MagicWindowSDK/WeChat/*.{h,m}"
+#sp.public_header_files = "MagicWindowSDK/WeChat/*.h"
+#sp.libraries = "sqlite3","c++"
+#sp.dependency 'CafeiSDK/MW'
+#end
 
 end
