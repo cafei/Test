@@ -10,19 +10,20 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
 
 s.requires_arc = true
-s.xcconfig = {
-'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK"',
-'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK"'
-}
-s.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","SystemConfiguration","CoreLocation"
-s.libraries = "z","sqlite3.0"
+
+
 
 s.subspec 'MW' do |mw|
 mw.source_files = "MagicWindowSDK/MagicWindowSDK/*.{h,m}"
 mw.public_header_files = "MagicWindowSDK/MagicWindowSDK/*.h"
-mw.resource     = "MagicWindowSDK/MagicWindowSDK/MagicWindow.bundle"
-mw.preserve_paths = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
-mw.vendored_libraries = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
+mw.resource     = "MagicWindowSDK/MagicWindowSDK/*.bundle"
+mw.vendored_libraries = "MagicWindowSDK/MagicWindowSDK/*.a"
+mw.xcconfig = {
+'LIBRARY_SEARCH_PATHS' => '"$(inherited) $(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK"',
+'HEADER_SEARCH_PATHS' => '"$(inherited) $(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK"'
+}
+mw.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","SystemConfiguration","CoreLocation"
+s.libraries = "z","sqlite3.0"
 end
 
 
