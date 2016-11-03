@@ -11,19 +11,15 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","SystemConfiguration","CoreLocation"
 
-  s.default_subspec = 'Cafei'
-
-  s.subspec 'Cafei' do |c|
-    c.source_files = "MagicWindowSDK/MagicWindowSDK/*.{h,m}"
-    c.public_header_files = "MagicWindowSDK/MagicWindowSDK/*.h"
-    c.resource     = "MagicWindowSDK/MagicWindowSDK/MagicWindow.bundle"
-    c.preserve_paths = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
-    c.vendored_libraries = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
-    c.xcconfig = {
-        'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK',
-        'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK'
-    }
-    c.libraries = "z","sqlite3.0"
-  end
+s.source_files = "MagicWindowSDK/MagicWindowSDK/*.{h,m}"
+s.public_header_files = "MagicWindowSDK/MagicWindowSDK/*.h"
+s.resource     = "MagicWindowSDK/MagicWindowSDK/MagicWindow.bundle"
+s.preserve_paths = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
+s.vendored_libraries = "MagicWindowSDK/MagicWindowSDK/libMagicWindowSDK.a"
+s.xcconfig = {
+'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK',
+'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDK'
+}
+s.libraries = "z","sqlite3.0"
 
 end
