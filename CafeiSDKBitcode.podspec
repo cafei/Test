@@ -1,12 +1,13 @@
 Pod::Spec.new do |s|
 
 s.name         = "CafeiSDKBitcode"
-s.version      = "1.1.0"
+s.version      = "1.1.1"
 s.summary      = "MagicWindowSDK for Cocoapods convenience."
 s.homepage     = "http://magicwindow.cn/"
 s.license      = "MIT"
 s.author       = { "MagicWindow" => "jiafei.liu@magicwindow.cn" }
 s.source       = { :git => "https://github.com/cafei/Test.git", :tag => "#{s.version}" }
+ 
 s.platform     = :ios, "7.0"
 s.requires_arc = true
 s.source_files = "MagicWindowSDK/MagicWindowSDKBitcode/*.{h,m}"
