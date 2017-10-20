@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
 s.name         = "CafeiSDK"
-s.version      = "1.1.2"
-s.summary      = "MagicWindowSDK for Cocoapods convenience."
+s.version      = "1.1.3"
+s.summary      = "CafeiSDK for Cocoapods convenience."
 s.homepage     = "http://magicwindow.cn/"
 s.license      = "MIT"
 s.author       = { "MagicWindow" => "jiafei.liu@magicwindow.cn" }
