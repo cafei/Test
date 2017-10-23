@@ -20,4 +20,6 @@ s.xcconfig = {
 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/CafeiCSDKBitcode/MWContentSDKBitcode"'
 }
 
+s.dependency "WechatOpenSDK"
+
 end
