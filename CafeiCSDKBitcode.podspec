@@ -10,15 +10,17 @@ s.source       = { :git => "https://github.com/cafei/Test.git", :tag => "#{s.ver
  
 s.platform     = :ios, "7.0"
 s.requires_arc = true
-s.source_files = "MWContentSDK/MWContentSDKBitcode/*.{h,m}"
-s.public_header_files = "MWContentSDK/MWContentSDKBitcode/*.h"
-s.resource     = "MWContentSDK/MWContentSDKBitcode/*.png"
-s.preserve_paths = "MWContentSDK/MWContentSDKBitcode/libMWContentSDK.a"
-s.vendored_libraries = "MWContentSDK/MWContentSDKBitcode/libMWContentSDK.a"
+s.source_files = "MWContentSDKBitcode/*.{h,m}"
+s.public_header_files = "MWContentSDKBitcode/*.h"
+s.resource     = "MWContentSDKBitcode/*.png"
+s.preserve_paths = "MWContentSDKBitcode/libMWContentSDK.a"
+s.vendored_libraries = "MWContentSDKBitcode/libMWContentSDK.a"
 s.xcconfig = {
-'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/MWContentSDK/MWContentSDKBitcode"',
-'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/MWContentSDK/MWContentSDKBitcode"'
+'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/CafeiCSDKBitcode/MWContentSDKBitcode"',
+'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/CafeiCSDKBitcode/MWContentSDKBitcode"'
 }
+
+s.dependency "MagicWindowSDK"
 s.dependency "WechatOpenSDK"
 s.dependency "MJRefresh"
 s.dependency "SDWebImage"
