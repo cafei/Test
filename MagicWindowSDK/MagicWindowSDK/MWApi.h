@@ -103,6 +103,14 @@ typedef  NSDictionary * _Nullable (^ CallbackWithReturnMLink) (NSString *__nonnu
 
 #pragma mark Campaign
 /**
+ *  获取UserAgent
+ *  当使用自己的WebView打开活动的时候，需要修改UserAgent（新UserAgent=原UserAgent + SDK的UserAgent），用作数据监测和统计
+ *  @param key 魔窗位key
+ *  @return SDK的UserAgent
+ */
++ (nullable NSString *)getUserAgentWithKey:(nonnull NSString *)key;
+
+/**
  *  获取活动相关配置信息
  *  适用于pushViewController
  *  @param key 魔窗位key
@@ -207,6 +215,13 @@ typedef  NSDictionary * _Nullable (^ CallbackWithReturnMLink) (NSString *__nonnu
        MLinkCallBackParamas:(nullable CallbackWithReturnMLink)mLinkCallBackParamas;
 
 /**
+ *  发送展现日志
+ *  @param key 魔窗位key
+ *  确定视图显示在window上之后再调用trackImpression，不要太早调用，在tableview或scrollview中使用时尤其要注意
+ */
++ (void)trackImpressionWithKey:(nonnull NSString *)key;
+
+/**
  *  判断单个魔窗位上是否有活动
  *  @param mwkey 魔窗位key
  *  @return yes:有处于活跃状态的活动；no：没有处于活跃状态的活动
@@ -243,107 +258,6 @@ typedef  NSDictionary * _Nullable (^ CallbackWithReturnMLink) (NSString *__nonnu
  *  @return void
  */
 + (void)setWebViewBarEditEnable:(BOOL)enable;
-
-#pragma mark Dynamic Campaign
-/**
- *  获取动态魔窗位的相关信息
- *  @param dynamicKeys array中是MWDynamicKeyDomain（MWApiObject.h）对象
- *  @param success callback 当成功获取到动态魔窗位相关信息的时候会调用这个回调，其中会返回有效的dynamicKeys
- *  @param failure callback 当获取到动态魔窗位相关信息失败的时候会调用这个回调
- *  @return void
- */
-+ (void)getAllDynamicMW:(nonnull NSArray *)dynamicKeys Success:(void (^ _Nullable)(NSArray *_Nonnull dynamicKeys))success Failure:(void (^ _Nullable)(NSString *_Nonnull errorMessage))failure;
-
-/**
- *  获取活动相关配置信息
- *  适用于所有的UIViewController
- *  @param dynamicMWKey 动态魔窗位key
- *  @param view 展示活动简介的view
- *  @param controller 展示活动简介的UIViewController
- *  @param success callback 当成功获取到该魔窗位上活动的时候会调用这个回调
- *  @param failure callback 当获取到该魔窗位上活动失败的时候会调用这个回调
- *  @return void
- */
-+ (void)configAdViewWithDynamicMWKey:(nonnull NSString *)dynamicMWKey withTargetView:(nonnull UIView *)view withTargetViewController:(nonnull UIViewController *)controller
-                    success:(CallbackWithCampaignSuccess)success
-                    failure:(CallbackWithCampaignFailure)failure;
-
-/**
- *  获取活动相关配置信息
- *  适用于所有的UIViewController
- *  @param dynamicMWKey 动态魔窗位key
- *  @param view 展示活动简介的view
- *  @param controller 展示活动简介的UIViewController
- *  @param success callback 当成功获取到该魔窗位上活动的时候会调用这个回调
- *  @param failure callback 当获取到该魔窗位上活动失败的时候会调用这个回调
- *  @param tap callback 当点击该魔窗位上活动的时候会调用这个回调，return YES 允许跳转，NO 不允许跳转
- *  @return void
- */
-+ (void)configAdViewWithDynamicMWKey:(nonnull NSString *)dynamicMWKey withTargetView:(nonnull UIView *)view withTargetViewController:(nullable UIViewController *)controller
-                    success:(CallbackWithCampaignSuccess)success
-                    failure:(CallbackWithCampaignFailure)failure
-                        tap:(nullable CallbackWithTapCampaign)tap;
-
-/**
- *  获取活动相关配置信息
- *  适用于所有的UIViewController
- *  @param dynamicMWKey 动态魔窗位key
- *  @param view 展示活动简介的view
- *  @param controller 展示活动简介的UIViewController
- *  @param success callback 当成功获取到该魔窗位上活动的时候会调用这个回调
- *  @param failure callback 当获取到该魔窗位上活动失败的时候会调用这个回调
- *  @param tap callback 当点击该魔窗位上活动的时候会调用这个回调，return YES 允许跳转，NO 不允许跳转
- *  @param mLinkHandler callback 当活动类型为mlink的时候，点击的该活动的时候，会调用这个回调，return mlink需要的相关参数
- *  @return void
- */
-+ (void)configAdViewWithDynamicMWKey:(nonnull NSString *)dynamicMWKey withTargetView:(nonnull UIView *)view withTargetViewController:(nullable UIViewController *)controller
-                    success:(CallbackWithCampaignSuccess)success
-                    failure:(CallbackWithCampaignFailure)failure
-                        tap:(nullable CallbackWithTapCampaign)tap
-               mLinkHandler:(nullable CallbackWithMLinkCampaign)mLinkHandler;
-
-/**
- *  获取活动相关配置信息
- *  适用于所有的UIViewController
- *  @param dynamicMWKey 动态魔窗位key
- *  @param view 展示活动简介的view
- *  @param controller 展示活动简介的UIViewController
- *  @param success callback 当成功获取到该魔窗位上活动的时候会调用这个回调
- *  @param failure callback 当获取到该魔窗位上活动失败的时候会调用这个回调
- *  @param tap callback 当点击该魔窗位上活动的时候会调用这个回调，return YES 允许跳转，NO 不允许跳转
- *  @param mLinkHandler callback 当活动类型为mlink的时候，点击的该活动的时候，会调用这个回调，return mlink需要的相关参数
- *  @param mLinkLandingPageHandler callback 当活动类型为mlink landing page的时候，点击的该活动的时候，会调用这个回调，return mlink landing page需要的相关参数
- *  @return void
- */
-+ (void)configAdViewWithDynamicMWKey:(nonnull NSString *)dynamicMWKey withTargetView:(nonnull UIView *)view withTargetViewController:(nullable UIViewController *)controller
-                    success:(CallbackWithCampaignSuccess)success
-                    failure:(CallbackWithCampaignFailure)failure
-                        tap:(nullable CallbackWithTapCampaign)tap
-               mLinkHandler:(nullable CallbackWithMLinkCampaign)mLinkHandler
-    mLinkLandingPageHandler:(nullable CallbackWithMLinkLandingPage)landingPageHandler;
-
-/**
- *  获取活动相关配置信息，支持A跳到B，B返回A，魔窗位即代表A
- *  适用于所有的UIViewController
- *  @param dynamicMWKey 动态魔窗位key
- *  @param view 展示活动简介的view
- *  @param controller 展示活动简介的UIViewController
- *  @param callBackMLinkKey : mLink key ,当从B返回回来的时候，会根据mLink key来跳转到相应的页面
- *  @param success callback 当成功获取到该魔窗位上活动的时候会调用这个回调
- *  @param failure callback 当获取到该魔窗位上活动失败的时候会调用这个回调
- *  @param tap callback 当点击该魔窗位上活动的时候会调用这个回调，return YES 允许跳转，NO 不允许跳转
- *  @param mLinkHandler callback 当活动类型为mlink的时候，点击的该活动的时候，会调用这个回调，return mlink需要的相关参数
- *  @param mLinkLandingPageHandler callback 当活动类型为mlink landing page的时候，点击的该活动的时候，会调用这个回调，return mlink landing page需要的相关参数
- *  @param MLinkCallBackParamas :callback 当从B返回过来的时候，需要的相关参数
- *  @return void
- */
-+ (void)configAdViewWithDynamicMWKey:(nonnull NSString *)dynamicMWKey withTargetView:(nonnull UIView *)view withTargetViewController:(nullable UIViewController *)controller WithCallBackMLinkKey:(nullable NSString *)callBackMLinkKey
-                    success:(CallbackWithCampaignSuccess)success
-                    failure:(CallbackWithCampaignFailure)failure
-                        tap:(nullable CallbackWithTapCampaign)tap
-               mLinkHandler:(nullable CallbackWithMLinkCampaign)mLinkHandler
-    mLinkLandingPageHandler:(nullable CallbackWithMLinkLandingPage)landingPageHandler
-       MLinkCallBackParamas:(nullable CallbackWithReturnMLink)mLinkCallBackParamas;
 
 #pragma mark Custom event
 
