@@ -11,7 +11,6 @@ s.platform     = :ios, "7.0"
 s.requires_arc = true
 s.source_files = "MWContentSDK/*.{h,m}"
 s.public_header_files = "MWContentSDK/*.h"
-s.resource     = "MWContentSDK/*.png"
 s.preserve_paths = "MWContentSDK/libMWContentSDK.a"
 s.vendored_libraries = "MWContentSDK/libMWContentSDK.a"
 s.xcconfig = {
