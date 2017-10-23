@@ -18,7 +18,6 @@ s.xcconfig = {
 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/CafeiCSDK/MWContentSDK"',
 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/CafeiCSDK/MWContentSDK"'
 }
-s.dependency "CafeiSDK"
 s.dependency "MJRefresh"
 s.dependency "SDWebImage"
 
