@@ -19,7 +19,6 @@ s.xcconfig = {
 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDKBitcode"',
 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/MagicWindowSDK/MagicWindowSDKBitcode"'
 }
-s.dependency "CafeiSDK"
 s.dependency "WechatOpenSDK"
 s.dependency "MJRefresh"
 s.dependency "SDWebImage"
