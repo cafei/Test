@@ -15,7 +15,7 @@ s.resource     = "MWContentSDK/MWContentSDK/*.png"
 s.preserve_paths = "MWContentSDK/MWContentSDK/libMWContentSDK.a"
 s.vendored_libraries = "MWContentSDK/MWContentSDK/libMWContentSDK.a"
 s.xcconfig = {
-'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/MWContentSDK/MWContentSDK"',
+'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/CafeiCSDK/MWContentSDK/MWContentSDK"',
 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/MWContentSDK/MWContentSDK"'
 }
 s.dependency "WechatOpenSDK"
