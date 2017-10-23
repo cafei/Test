@@ -22,6 +22,5 @@ s.xcconfig = {
 s.dependency "MJRefresh"
 s.dependency "SDWebImage"
 s.dependency "MagicWindowSDK"
-s.dependency "WechatOpenSDK"
 
 end
