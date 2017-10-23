@@ -19,10 +19,10 @@ s.xcconfig = {
 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/CafeiCSDKBitcode/MWContentSDKBitcode"',
 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/CafeiCSDKBitcode/MWContentSDKBitcode"'
 }
-
-s.dependency "MagicWindowSDK"
-s.dependency "WechatOpenSDK"
+s.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","SystemConfiguration","CoreLocation"
 s.dependency "MJRefresh"
 s.dependency "SDWebImage"
+s.dependency "MagicWindowSDKBitcode"
+s.dependency "WechatOpenSDK"
 
 end
