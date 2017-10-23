@@ -22,6 +22,7 @@ s.xcconfig = {
 s.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","SystemConfiguration","CoreLocation"
 s.dependency "MJRefresh"
 s.dependency "SDWebImage"
-s.dependency "MagicWindowSDK"
+s.dependency "MagicWindowSDKBitcode"
+s.dependency "WechatOpenSDK"
 
 end
