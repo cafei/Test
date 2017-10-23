@@ -23,6 +23,5 @@ s.frameworks = "AdSupport","CoreTelephony","CoreGraphics","CoreFoundation","Syst
 s.dependency "MJRefresh"
 s.dependency "SDWebImage"
 s.dependency "MagicWindowSDKBitcode"
-s.dependency "WechatOpenSDK"
 
 end
